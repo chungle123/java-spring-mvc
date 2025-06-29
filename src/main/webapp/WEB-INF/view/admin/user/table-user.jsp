@@ -40,26 +40,18 @@
                                 </tr>
                                </thead>
                                <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <th>Mark</th>
-                                    <th>Ordo</th>
+                                <c:forEach var="user" items="${users}">
+                                    <tr>
+                                    <th>${user.id}</th>
+                                    <th>${user.email}</th>
+                                    <th>${user.fullName}</th>
                                     <td>
-                                        <button class="btn btn-success">View</button>
-                                        <button class="btn btn-warning mx-2">Update</button>
-                                        <button class="btn btn-danger">Delete</button>
+                                        <a href="/admin/user/${user.id}" class="btn btn-success">View</a>
+                                        <a href="/admin/user/update/${user.id}" class="btn btn-warning mx-2">Update</a>
+                                        <a href="/admin/user/delete/${user.id}" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>2</th>
-                                    <th>Chung</th>
-                                    <th>Lê</th>
-                                    <td>
-                                        <button class="btn btn-success">View</button>
-                                        <button class="btn btn-warning mx-2">Update</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
+                                </c:forEach>           
                                </tbody>
                             </table>
                         </div>
